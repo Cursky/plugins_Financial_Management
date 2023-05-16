@@ -8,6 +8,15 @@
 * 导出建议
 * 图表输出
 
+
+## 效果展示
+
+* 添加功能
+<img src='./Assert/gongneng1.png'></img>
+
+* 展示和计算功能(注意是完全不同的两个会话)
+<img src='./Assert/gongneng2.png'></img>
+
 ## ChatGPT插件制作教程
 
 
@@ -16,3 +25,5 @@
 
 
 2.创建 openai.yaml 
+
+3.写main.py 并运行
