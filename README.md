@@ -17,6 +17,9 @@
 * 展示和计算功能(注意是完全不同的两个会话)
 <img src='./Assert/gongneng2.png'></img>
 
+* 输出所有账单并绘制饼图后显示(饼图这里还有点小BUG)
+
+<img src='./Assert/gongneng3.png'></img>
 ## ChatGPT插件制作教程
 
 
