@@ -1,0 +1,19 @@
+{
+    "schema_version": "v1", //版本信息
+    "name_for_human": "TODO Plugin (no auth)" //给人类看的名字,
+    "name_for_model": "todo", //给GPT看的名字
+    "description_for_human": "Plugin for managing a TODO list, you can add, remove and view your TODOs.", //给人类的解释 让人类理解你这个插件是干嘛的
+    "description_for_model": "Plugin for managing a TODO list, you can add, remove and view your TODOs.", //给GPT的解释 让GPT理解你这个插件是干嘛的
+    "auth": {
+      "type": "none" //身份验证模式 即 是否启动身份认证
+    },
+    "api": { //api规范
+      "type": "openapi",
+      "url": "http://localhost:5003/openapi.yaml",
+      "is_user_authenticated": false
+    },
+    "logo_url": "http://localhost:5003/logo.png", //logo图片的链接
+    "contact_email": "legal@example.com",//作者的联系邮箱
+    "legal_info_url": "http://example.com/legal" //联系链接
+  }
+  

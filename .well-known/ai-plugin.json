@@ -1,0 +1,19 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Financial Management Plugin (beta)",
+    "name_for_model": "Financial Management",
+    "description_for_human": "Plug-ins can help you keep accounts, analyze them, and give suggestions to improve your financial management capabilities",
+    "description_for_model": "Plug-ins for managing financial information You can add, delete, view consumption records, get record information, calculate and summarize financial expenditures,",
+    "auth": {
+      "type": "none"
+    },
+    "api": {
+      "type": "openapi",
+      "url": "http://localhost:5003/openapi.yaml",
+      "is_user_authenticated": false
+    },
+    "logo_url": "http://localhost:5003/logo.png",
+    "contact_email": "legal@example.com",
+    "legal_info_url": "http://example.com/legal"
+  }
+  

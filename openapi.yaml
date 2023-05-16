@@ -1,0 +1,111 @@
+openapi: 3.0.1
+info:
+  title: Financial Management Plugin
+  description: A plugin that allows the user to manage daily expenses using ChatGPT. If you do not know the user's username, ask them first before making queries to the plugin. Otherwise, use the username "global".
+  version: 'v1'
+servers:
+  - url: http://localhost:5003
+paths:
+  /expenses/{username}:
+    get:
+      operationId: getExpenses
+      summary: List all the expenses
+      parameters:
+      - in: path
+        name: username
+        schema:
+            type: string
+        required: true
+        description: The name of the user.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getExpensesResponse'
+    post:
+      operationId: addExpense
+      summary: Add an expense
+      parameters:
+      - in: path
+        name: username
+        schema:
+            type: string
+        required: true
+        description: The name of the user.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/addExpenseRequest'
+      responses:
+        "200":
+          description: OK
+    delete:
+      operationId: deleteExpense
+      summary: Delete an expense
+      parameters:
+      - in: path
+        name: username
+        schema:
+            type: string
+        required: true
+        description: The name of the user.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/deleteExpenseRequest'
+      responses:
+        "200":
+          description: OK
+
+components:
+  schemas:
+    getExpensesResponse:
+      type: object
+      properties:
+        expenses:
+          type: array
+          items:
+            $ref: '#/components/schemas/Expense'
+          description: The list of expenses.
+    addExpenseRequest:
+      type: object
+      required:
+      - expense
+      properties:
+        expense:
+          $ref: '#/components/schemas/Expense'
+    deleteExpenseRequest:
+      type: object
+      required:
+      - expense_id
+      properties:
+        expense_id:
+          type: integer
+          description: The id of the expense to delete.
+          required: true
+    Expense:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The id of the expense.
+        amount:
+          type: number
+          format: float
+          description: The amount of the expense.
+        category:
+          type: string
+          description: The category of the expense.
+        description:
+          type: string
+          description: The description of the expense.
+        date:
+          type: string
+          format: date
+          description: The date of the expense.
